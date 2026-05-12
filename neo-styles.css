@@ -767,8 +767,14 @@ body[data-theme="dark"] .job-desc i {
   }
 
   .navbar {
-    margin: 10px 10px 0;
+    margin: 5px 5px 0;
+    top: 5px;
     box-shadow: 4px 4px 0 var(--border);
+    border-width: 3px;
+  }
+  
+  .nav-content {
+    padding: 0.4rem 0.75rem;
   }
 }
 
@@ -1451,6 +1457,8 @@ body[data-theme="dark"] .stat-number {
   .hero-image-wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   .deco-code {
@@ -1508,6 +1516,40 @@ body[data-theme="dark"] .stat-number {
   .paper-tear-bottom svg path[fill="#d0d0d0"],
   .paper-tear-bottom svg path[fill="#ffffff"] {
     display: none;
+  }
+
+  /* Extra small screen adjustments */
+  @media (max-width: 480px) {
+    .hero-name {
+      font-size: 1.75rem;
+    }
+    
+    .hero-greeting {
+      font-size: 1.25rem;
+    }
+    
+    .tech-badge {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.75rem;
+    }
+    
+    .section-title {
+      font-size: 1.25rem;
+    }
+    
+    .card {
+      padding: 1rem;
+    }
+    
+    .nav-brand {
+      font-size: 1.2rem;
+      padding: 0.25rem 0.5rem;
+    }
+    
+    .nav-cta {
+      padding: 0.35rem 0.6rem;
+      font-size: 0.75rem;
+    }
   }
 
   .coffee-cta-wrapper {
@@ -1621,7 +1663,7 @@ body[data-theme="dark"] .stat-number {
   }
 
   .skill-box {
-    padding: 1.5rem;
+    padding: 1rem;
     box-shadow: 4px 4px 0 var(--border);
     border: 3px solid var(--border);
   }
@@ -1646,8 +1688,8 @@ body[data-theme="dark"] .stat-number {
   }
 
   .contact-card {
-    padding: 2rem 1.5rem;
-    min-height: 160px;
+    padding: 1.5rem 1rem;
+    min-height: 140px;
     box-shadow: 4px 4px 0 var(--border);
   }
 
@@ -2558,6 +2600,7 @@ body[data-theme="dark"] .map-popup-company span {
 .skill-box:hover {
   transform: translate(8px, 8px);
   box-shadow: 0 0 0 var(--border);
+  z-index: 10;
 }
 
 .highlight-box {
@@ -3556,6 +3599,11 @@ body[data-theme="dark"] .nav-lazyfire {
 /* Custom Tooltip - Cartoon Style Base */
 [data-tooltip] {
     position: relative;
+    transition: z-index 0.3s step-start;
+}
+
+[data-tooltip]:hover {
+    z-index: 50;
 }
 
 [data-tooltip]::before,
